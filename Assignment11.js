@@ -1,0 +1,45 @@
+/*Bank Transaction Analyzer
+
+You are building a bank statement summary.
+
+Test data:
+const transactions = [
+  { id: 1, type: "credit", amount: 5000 },
+  { id: 2, type: "debit", amount: 2000 },
+  { id: 3, type: "credit", amount: 10000 },
+  { id: 4, type: "debit", amount: 3000 }
+];
+
+Tasks:
+    1. filter() all credit transactions
+    2. map() to extract only transaction amounts
+    3. reduce() to calculate final account balance
+    4. find() the first debit transaction
+    5. findIndex() of transaction with amount 10000*/
+const transactions = [
+    { id: 1, type: "credit", amount: 5000 },
+    { id: 2, type: "debit", amount: 2000 },
+    { id: 3, type: "credit", amount: 10000 },
+    { id: 4, type: "debit", amount: 3000 }
+];
+//filter() all credit transactions
+let creditTransactions = transactions.filter(transObj => transObj.type === "credit")
+console.log(creditTransactions);
+//map() to extract only transaction amounts
+let transactionAmounts = transactions.map(transObj => transObj.amount)
+console.log(transactionAmounts);
+//reduce() to calculate final account balance
+let finalBalance = transactions.reduce((acc, transObj) => {
+    if (transObj.type === "credit") {
+        return acc + transObj.amount
+    } else {
+        return acc - transObj.amount
+    }
+}, 0)
+console.log(finalBalance);
+//find() the first debit transaction
+let firstDebit = transactions.find(transObj => transObj.type === "debit")
+console.log(firstDebit);
+//findIndex() of transaction with amount 10000
+let indexOf10k = transactions.findIndex(transObj => transObj.amount === 10000)
+console.log(indexOf10k);
