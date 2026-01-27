@@ -1,0 +1,50 @@
+/*Assignment 2: Date Comparison & Validation (Beginner → Intermediate)
+--------------------------------------------------------------------
+
+ Given:
+      let enrollmentDeadline = new Date("2026-01-20");
+
+Tasks:
+  1.Check if:
+      * Today is before deadline → "Enrollment Open"
+      * Today is after deadline → "Enrollment Closed"
+
+  2. Validate user input date:
+      * Input: "2026-02-30"
+      * Detect whether the date is valid or invalid*/
+const enrollmentDeadline = new Date("2026-01-20");
+const today = new Date();
+
+// Task 1
+if (today < enrollmentDeadline) {
+    console.log("Enrollment Open");
+} else {
+    console.log("Enrollment Closed");
+}
+
+// Task 2
+function isValidDate(dateString) {
+    const date = new Date(dateString);
+    return date instanceof Date && !isNaN(date) && date.toISOString().startsWith(dateString);
+}
+
+const userInputDate = "2026-02-30";
+if (isValidDate(userInputDate)) {
+    console.log(`${userInputDate} is a valid date.`);
+} else {
+    console.log(`${userInputDate} is an invalid date.`);
+}
+// Output:
+//Enrollment Closed
+//2026-02-30 is an invalid date.
+
+
+
+
+
+
+
+
+
+
+
