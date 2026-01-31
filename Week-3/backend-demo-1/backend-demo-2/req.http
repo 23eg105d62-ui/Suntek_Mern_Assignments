@@ -1,0 +1,60 @@
+
+### Read all users
+GET http://localhost:4000/user-api/users
+
+### Read user by objecdtId
+GET http://localhost:4000/user-api/users/697dba88e026c6b745c11264
+
+### Create new user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username" : "JacobP",
+    "password" : "007Bond",
+    "age" : 20
+}
+
+###Update User
+PUT http://localhost:4000/user-api/users/697dbc9ac9eba00ad925b580
+Content-Type: application/json
+
+{
+    "username" : "JacobP",
+    "password" : "007Bond",
+    "age" : 17
+}
+
+###Delete User
+DELETE http://localhost:4000/user-api/users/697dbc9ac9eba00ad925b580
+
+###Product Model Requests
+###Read all Products
+
+GET http://127.0.0.1:4000/product-api/products
+
+###
+### Create new user
+POST http://127.0.0.1:4000/product-api/products
+Content-Type: application/json
+
+{
+    "prodId" : "005",
+    "prodName" : "Bottle",
+    "brand" : "Borosil",
+    "price" : 250
+}
+
+###Read Product by id
+GET http://127.0.0.1:4000/product-api/products/697dd12c005c6b1b095e4303
+
+###Update Product by ID
+PUT http://127.0.0.1:4000/product-api/products/697dd12c005c6b1b095e4303
+Content-Type: application/json
+
+{
+    "prodId" : "005",
+    "prodName" : "Bottle",
+    "brand" : "Milton",
+    "price" : 250
+}
