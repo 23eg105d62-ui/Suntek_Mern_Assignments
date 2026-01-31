@@ -1,0 +1,96 @@
+GET http://127.0.0.1:3000/user-api/users
+
+### 
+POST http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+
+{
+    "id" : 100,
+    "name" : "Patrick",
+    "age" : 19
+}
+###
+POST http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+
+{
+    "id" : 200,
+    "name" : "Patricia",
+    "age" : 24
+}
+
+###
+PUT    http://127.0.0.1:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id" : 102,
+    "name" : "Patrick Jane",
+    "age" : 22
+}
+### Read a user by ID
+GET http://localhost:3000/user-api/users/200 
+
+
+###
+DELETE http://127.0.0.1:3000/user-api/users/200
+###
+GET http://127.0.0.1:3000/prod-api/products
+
+
+
+### 
+POST http://127.0.0.1:3000/prod-api/products
+Content-Type: application/json
+
+
+{
+    "productId" : 100,
+    "name" : "biscuits",
+    "price" : 40.00,
+    "brand" : "Britannia"
+}
+###
+POST http://127.0.0.1:3000/prod-api/products
+Content-Type: application/json
+
+
+{
+    "productId" : 101,
+    "name" : "shampoo",
+    "price" : 140.00,
+    "brand" : "Pantene"
+}
+
+###
+POST http://127.0.0.1:3000/prod-api/products
+Content-Type: application/json
+
+
+{
+    "productId" : 102,
+    "name" : "paste",
+    "price" : 45.00,
+    "brand" : "Colgate"
+}
+###
+PUT    http://127.0.0.1:3000/prod-api/products/101
+Content-Type: application/json
+
+{
+    "productId" : 101,
+    "name" : "shampoo",
+    "price" : 40.00,
+    "brand" : "Pantene"
+}
+
+### Read product by ID
+GET http://localhost:3000/prod-api/products/100
+
+### Read product by brand
+GET http://localhost:3000/prod-api/products/brand/Britannia
+
+###
+DELETE http://127.0.0.1:3000/prod-api/products/100
