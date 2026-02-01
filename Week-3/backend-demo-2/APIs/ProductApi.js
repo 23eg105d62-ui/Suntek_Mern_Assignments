@@ -36,7 +36,7 @@ productApp.put('/products/:id', async (req, res) => {
     //get modified user from req
     let modfifiedProd = req.body
     //make update
-    let lastestProd = await ProductModel.findByIdAndUpdate(objId, { $set: { ...modfifiedProd } }, { new: true })//returns modified counts
+    let lastestProd = await ProductModel.findByIdAndUpdate(objId, { $set: { ...modfifiedProd } }, { new: true, runValidators: true })//returns modified counts
     res.status(200).json({ message: "Product has been modified successfully", payload: lastestProd })
     //send res
 })
