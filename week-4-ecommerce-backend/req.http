@@ -1,0 +1,25 @@
+### Create Product
+POST http://127.0.0.1:8000/product-api/products
+Content-Type: application/json
+
+{
+    "prodName" : "Ipad-Air",
+    "price" : 100000,
+    "brand": "Apple"
+}
+
+###
+POST http://127.0.0.1:8000/user-api/users/
+Content-Type: application/json
+
+{
+    "name":"test1",
+    "email":"test1@gmail",
+    "password":"test3@",
+    "cart":[]
+}
+
+### Req to product to cart
+PUT http://127.0.0.1:8000/user-api/user-cart/user-id/6981a57327909f0002ff6eba/product-id/6981a57027909f0002ff6eb7
+###
+GET http://127.0.0.1:8000/user-api/users/
